@@ -2,12 +2,14 @@ function btnSave(){
     btnZoom = createButton('Aplicar alterações')
     btnZoom.position(20, 900);
     btnZoom.mousePressed(redraw);
+    btnSeed = createButton('Gerar outro mapa');
+    btnSeed.mousePressed(generateSeed);
   }
   
   function createSliders(){
-    sliderZoom = createSlider(50, 200, 100);
-    sliderNoise = createSlider(5, 15, 7);
-    sliderNoise.position(0, 850)
+    sliderZoom = createSlider(20, 100, 50);
+    sliderNoise = createSlider(3, 20, 7);
+    sliderNoise.position(0, 850);
   }
   
   function createTerrain(){
@@ -36,3 +38,9 @@ function btnSave(){
   function addNoise(valor){
     noiseDetail(valor, 0.5);
   }
+  
+  function generateSeed(){
+    noiseSeed(millis());
+    drawMap();
+    console.log('teste');
+}
