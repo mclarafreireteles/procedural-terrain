@@ -4,6 +4,8 @@ function btnSave(){
     btnZoom.mousePressed(redraw);
     btnSeed = createButton('Gerar outro mapa');
     btnSeed.mousePressed(generateSeed);
+    btnSeed.position(20, 930);
+
   }
   
   function createSliders(){
@@ -38,7 +40,7 @@ function btnSave(){
   function addNoise(valor){
     noiseDetail(valor, 0.5);
   }
-  
+
   function generateSeed(){
     noiseSeed(millis());
     drawMap();
